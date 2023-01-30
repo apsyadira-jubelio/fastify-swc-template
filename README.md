@@ -17,6 +17,7 @@ The repository is template for starting project with fastify clean architecture.
 ### How To Use
 
 - Clone this repository
+- Use node v16+
 - Run `npm install` or `yarn install`
 - then run `yarn dev` to run localy
 
