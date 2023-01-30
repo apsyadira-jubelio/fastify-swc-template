@@ -1,0 +1,26 @@
+{
+  "title": "Tenant List Schema",
+  "type": "object",
+  "required": ["page", "pageSize"],
+  "properties": {
+    "page": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "pageSize": {
+      "type": "number",
+      "minimum": 25,
+      "maximum": 100
+    },
+    "q": {
+      "type": "string"
+    },
+    "sortBy": {
+      "type": "string"
+    },
+    "sortDirection": {
+      "type": "string"
+    }
+  }
+}

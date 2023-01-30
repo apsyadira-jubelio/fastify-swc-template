@@ -1,0 +1,12 @@
+{
+  "title": "Tenant Detail Schema",
+  "type": "object",
+  "properties": {
+    "startDate": {
+      "type": "string"
+    },
+    "endDate": {
+      "type": "string"
+    }
+  }
+}
