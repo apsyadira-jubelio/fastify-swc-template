@@ -10,11 +10,11 @@ import pg, { IClient } from 'pg-promise/typescript/pg-subset'
  * Params for connection
  */
 const systemDb: pg.IConnectionParameters<IClient> = {
-  host: config.SYSTEM_HOST,
-  port: config.DB_PORT,
-  database: config.SYSTEM_DB,
-  user: config.SYSTEM_USER,
-  password: config.SYSTEM_PWD,
+  host: config.SYSTEM_DB_HOST,
+  port: config.SYSTEM_DB_PORT,
+  database: config.SYSTEM_DB_NAME,
+  user: config.SYSTEM_DB_USER,
+  password: config.SYSTEM_DB_PWD,
   idleTimeoutMillis: +config.POOL_IDLE_TIMEOUT,
   max: +config.TENANT_POOL_SIZE,
 }
@@ -23,7 +23,7 @@ const TenantDB = {
   user: config.TENANT_USER,
   password: config.TENANT_PWD,
   host: '',
-  port: config.DB_PORT,
+  port: config.TENANT_DB_PORT,
   database: '',
   poolsize: 10,
   max: 10,

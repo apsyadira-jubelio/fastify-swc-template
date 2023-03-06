@@ -6,7 +6,7 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 
 export const getDashboardStats = async (_request: FastifyRequest, reply: FastifyReply): Promise<void> => {
   try {
-    const resTenants = await helloFromDashboard()
+    const resTenants = helloFromDashboard()
 
     return reply.status(200).send({ resTenants })
   } catch (error) {

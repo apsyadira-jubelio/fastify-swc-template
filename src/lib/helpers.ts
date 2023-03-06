@@ -1,20 +1,16 @@
+const singletonMap = new Map<symbol, unknown>()
+
 export function createSingleton<T>(name: string, create: () => T): T {
-  const s = Symbol.for(name)
-  let scope = (global as any)[s]
-  if (!scope) {
-    scope = { ...create() }
-    ;(global as any)[s] = scope
+  const singletonSymbol = Symbol.for(name)
+
+  if (singletonMap.has(singletonSymbol)) {
+    return singletonMap.get(singletonSymbol) as T
   }
-  return scope
-}
 
-export const getChannelName = (object: any, value: number) => {
-  const channel = Object.keys(object).find((key) => object[key] === value)
-  return channel ? channel[0].toUpperCase() + channel.slice(1).toLocaleLowerCase() : null
-}
+  const singleton = create()
+  singletonMap.set(singletonSymbol, singleton)
 
-export const isEmpty = (obj: Record<string, unknown>) => {
-  return Object.keys(obj).length === 0 && obj.constructor === Object
+  return singleton
 }
 
 export const groupBy = <T>(listArr: T[], callback: (data: T) => string[]): T[][] => {
