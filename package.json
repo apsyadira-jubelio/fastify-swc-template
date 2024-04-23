@@ -37,7 +37,10 @@
     "format": "yarn format:check && prettier -w .",
     "format:check": "prettier -c .",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "migrate:make": "npx ts-node ./migrate.ts make:migration --name",
+    "migrate:up": "npx knex migrate:latest --migrations-directory ./migrations --env=development",
+    "migrate:down": "npx knex migrate:down --migrations-directory ./migrations --env=development"
   },
   "husky": {
     "hooks": {
@@ -74,6 +77,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
+    "knex": "^3.1.0",
     "lint-staged": "^12.1.7",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
