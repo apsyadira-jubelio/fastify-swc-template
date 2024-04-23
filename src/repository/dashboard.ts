@@ -1,9 +1,8 @@
-
 /**
  * Put your logic query in this file
- * 
- * @returns 
+ *
+ * @returns
  */
 export const helloFromDashboard = () => {
-  return "Hello from dashboard"
+  return 'Hello from dashboard'
 }
